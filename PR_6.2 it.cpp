@@ -27,8 +27,8 @@ int IndexOfMax(int* a, const int size)
 {
     int imax = 0; // початкове значення - з наявних елементів масиву
     for (int i = 1; i < size; i++)
-        if (a[i] > a[imax])
-            imax = i;
+        if (a[i] > a[imax])    // якщо поточний елемент більший за найбільший знайдений
+            imax = i;          // то запам'ятовуємо його індекс як новий найбільший
     return imax;
 }
 
@@ -37,8 +37,8 @@ int IndexOfMin(int* a, const int size)
 {
     int imin = 0;
     for (int i = 1; i < size; i++)
-        if (a[i] < a[imin])
-            imin = i;
+        if (a[i] < a[imin])   // якщо поточний елемент менший за найменший знайдений
+            imin = i;         // то запам'ятовуємо його індекс як новий найменший
     return imin;
 }
 
@@ -46,10 +46,10 @@ int main()
 {
     srand((unsigned)time(NULL)); // ініціалізація генератора випадкових чисел
 
-    const int n = 10;
+    const int n = 25;
     int a[n];
-    const int Low = -10;
-    const int High = 10;
+    const int Low = 5;
+    const int High = 90;
 
     Create(a, n, Low, High);
     cout << "Array:" << endl;
